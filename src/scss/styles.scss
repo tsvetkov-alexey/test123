@@ -1,0 +1,245 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+
+  .sidebar {
+    width: 15%;
+    background-color: #ebe9e9;
+    color: #4f4d4d;
+    padding: 20px;
+    position: fixed;
+    height: 100%;
+    border-right: 0.5px solid #848484;
+    overflow-y: auto;
+
+    .company {
+      display: flex;
+      flex-direction: column;
+
+      &_logo {
+        display: flex;
+        align-items: center;
+
+        img {
+          max-width: 15%;
+        }
+
+        h3 {
+          margin-top: 4px;
+        }
+      }
+      span {
+        color: rgb(140, 138, 138);
+      }
+    }
+
+    // --------- Навигация ----------
+    .nav {
+      margin-top: 40px;
+      &_element {
+        &_block {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          margin-top: 10px;
+
+          .info {
+            display: flex;
+            align-items: center;
+            width: 80%;
+
+            img {
+              max-width: 17px;
+              margin-right: 7px;
+            }
+          }
+        }
+
+        .subnav {
+          ul {
+            padding: 10px 0;
+            list-style-type: none;
+
+            li {
+              padding: 5px 10px;
+            }
+
+            li:hover {
+              background: rgb(215, 215, 232);
+              color: rgb(101, 101, 236);
+            }
+          }
+        }
+      }
+    }
+    .nav:hover {
+      cursor: pointer;
+    }
+  }
+
+  .content {
+    // background-color: #f4f4f4;
+    width: 100%;
+    flex-grow: 1;
+    margin-left: 15%;
+
+    .header {
+      // width: 100%;
+      display: flex;
+      border-bottom: 2px solid #dbdbdb;
+      padding: 15px 0;
+      font-size: 24px;
+      font-weight: bold;
+
+      .settings {
+        width: 80%;
+        display: flex;
+        justify-content: end;
+        padding: 0 10px;
+        border-right: 0.3px solid rgb(179, 179, 179);
+        img {
+          max-width: 20px;
+        }
+        img:hover {
+          cursor: pointer;
+        }
+      }
+
+      .profile {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 10px;
+        font-size: 18px;
+        width: 15%;
+
+        img {
+          max-width: 20px;
+          padding: 5px;
+          border: 0.5px solid #000;
+          border-radius: 100%;
+        }
+
+        img:hover {
+          cursor: pointer;
+        }
+
+        .arrow {
+          img {
+            max-width: 20px;
+            border: 0;
+          }
+        }
+      }
+    }
+
+    // -------- Основной контент --------
+    .main-content {
+      margin-left: 7%;
+      .current-location {
+        margin-top: 30px;
+        font-weight: 400;
+      }
+
+      h2 {
+        margin-top: 10px;
+      }
+
+      .searchInfo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        .notes {
+          margin-top: 13px;
+          font-weight: 400;
+          color: grey;
+        }
+
+        .search {
+          margin-right: 10%;
+          display: flex;
+          width: 40%;
+          height: 24px;
+          border: 1px solid black;
+          border-radius: 5px;
+          position: relative;
+          #searchIcon {
+            max-width: 20px;
+            max-height: 20px;
+            position: absolute;
+            top: 2px;
+            left: 5px;
+          }
+          #filterIcon {
+            max-width: 20px;
+            max-height: 20px;
+            position: absolute;
+            top: 2px;
+            right: 5px;
+          }
+
+          input {
+            width: 100%;
+            padding-left: 30px;
+            border-radius: 5px;
+            border: 0;
+            outline: none;
+          }
+
+          img:hover {
+            cursor: pointer;
+          }
+
+          .subSearch {
+            max-height: auto;
+            width: 70%;
+            border: 1px solid rgb(227, 227, 227);
+            background: #ffffff;
+            position: absolute;
+            top: 24px;
+            right: 0px;
+            padding: 20px;
+            filter: drop-shadow(0 0 0.75rem rgb(159, 173, 210));
+            border-radius: 10px;
+
+            .filters {
+              display: flex;
+              justify-content: space-between;
+              align-items: center;
+
+              img {
+                max-width: 15px;
+              }
+              img:hover {
+                cursor: pointer;
+              }
+            }
+
+            h3 {
+              font-size: 20px;
+            }
+
+            h5 {
+              font-weight: 400;
+              font-size: 16px;
+              margin-top: 15px;
+              margin-bottom: 10px;
+            }
+
+            select {
+              width: 100%;
+              height: 26px;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

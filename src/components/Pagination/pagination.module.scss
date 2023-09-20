@@ -1,0 +1,44 @@
+.root {
+  li {
+    display: inline-flex;
+    margin-top: 30px;
+
+    a {
+      border: 1px solid silver;
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      color: #000;
+      text-align: center;
+      line-height: 36px;
+      margin-right: 5px;
+      cursor: pointer;
+    }
+
+    a:hover {
+      background: #fff;
+      color: #000;
+    }
+  }
+
+  :global {
+    .selected {
+      a {
+        background-color: #a4b6e7;
+        color: #000;
+      }
+    }
+  }
+
+  li:first-child {
+    margin-left: 40%;
+  }
+}
+
+@media (max-width: 420px) {
+  .root {
+    li:first-child {
+      margin-left: 20%;
+    }
+  }
+}
