@@ -47,7 +47,7 @@ const SearchInfo = () => {
         <div className="search">
           <input
             type="text"
-            placeholder="Введите что-нибудь..."
+            placeholder="Введите название..."
             value={value}
             onChange={onChangeInput}
           />
@@ -61,13 +61,13 @@ const SearchInfo = () => {
               </div>
               <h5>Тип ПК</h5>
               <select ref={selectedTypeRef} onChange={handleSelectType}>
-                <option value="default">default (Все)</option>
+                <option value="default">All</option>
                 <option value="vm_host">vm_host</option>
                 <option value="vm_guest">vm_guest</option>
               </select>
               <h5>Теги</h5>
               <select ref={selectedTagRef} onChange={handleSelectTag}>
-                <option value="All">Все</option>
+                <option value="All">All</option>
                 <option value="Green">Green</option>
                 <option value="Yellow">Yellow</option>
                 <option value="Red">Red</option>

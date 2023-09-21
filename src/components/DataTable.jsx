@@ -12,6 +12,9 @@ import { useDispatch, useSelector } from 'react-redux';
 import { fetchInfo } from '../redux/slices/info';
 import Loader from './UI/Loader';
 
+import qs from 'qs';
+import { useNavigate } from 'react-router-dom';
+
 function createData(checkbox, name, type, location, org, number, tags, creation, refresh, audit) {
   return { checkbox, name, type, location, org, number, tags, creation, refresh, audit };
 }
@@ -23,9 +26,20 @@ const DataTable = () => {
   const currentTag = useSelector((state) => state.filter.currentTag.name);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   useEffect(() => {
     dispatch(fetchInfo({ search, page, currentType, currentTag }));
+  }, [search, page, currentType, currentTag]);
+
+  useEffect(() => {
+    const queryString = qs.stringify({
+      search,
+      page,
+      currentType,
+      currentTag,
+    });
+    navigate(`?${queryString}`);
   }, [search, page, currentType, currentTag]);
 
   console.log(info, status);

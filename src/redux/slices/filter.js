@@ -4,10 +4,10 @@ const initialState = {
   search: '',
   page: 1,
   currentType: {
-    name: 'default (Все)',
+    name: 'All',
   },
   currentTag: {
-    name: 'Все',
+    name: 'All',
   },
 };
 

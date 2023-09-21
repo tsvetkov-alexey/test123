@@ -5,31 +5,9 @@ import SearchInfo from '../../components/SearchInfo';
 import Sidebar from '../../components/Sidebar';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPage } from '../../redux/slices/filter';
-import { useEffect } from 'react';
-import { fetchInfo } from '../../redux/slices/info';
 
 const Home = () => {
   const dispatch = useDispatch();
-
-  // const currentType = useSelector((state) => state.filter.currentType.name);
-  // const currentTag = useSelector((state) => state.filter.currentTag.name);
-
-  // console.log(currentTag, currentType);
-
-  // useEffect(() => {
-  //   if (currentType) {
-  //     const typeFetch = () => {
-  //       dispatch(fetchInfo({ currentType }));
-  //     };
-  //     typeFetch();
-  //   }
-  //   if (currentTag) {
-  //     const tagFetch = () => {
-  //       dispatch(fetchInfo({ currentTag }));
-  //     };
-  //     tagFetch();
-  //   }
-  // }, [currentType, currentTag]);
 
   const onChangePage = (page) => {
     dispatch(setPage(page));
